@@ -1,0 +1,128 @@
+.header
+  &__inner 
+    position: relative
+
+    padding: 3.3rem 0 4rem 0
+
+    border-bottom: 1px solid $gray
+
+.nav 
+  display: flex
+  justify-content: space-between
+
+  &.nav_show
+    position: absolute
+
+    right: 0
+    top: 6.4rem
+    z-index: 1
+
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start
+
+    width: 100%
+    height: calc(100vh - 6.4rem)
+
+    padding: 0 2.5rem 6rem 2.5rem
+
+    .nav__link
+      &:not(:last-child)
+        margin-bottom: 6rem
+
+    .nav__notice 
+      display: block
+      transform: rotate(90deg) translateX(-5.2rem)
+
+      align-self: flex-end 
+
+      span 
+        +font('Gilroy Bold', 3.4rem, $gray)
+
+        &:first-child
+          color: $gray
+
+        &:last-child
+          color: $black
+
+  &__link 
+    +font('Gilroy Bold', 1.8rem, $gray)
+    text-decoration: none
+
+    +tr    
+
+    &:hover 
+      color: $black
+
+  &__notice 
+    display: none    
+
+.burger
+  height: 2rem
+  width: 3.3rem
+
+  display: none
+  align-items: center
+
+  margin-left: auto
+
+  &.burger_active
+    height: 2.5rem
+
+    .burger__item 
+      transform: rotate(45deg) translateX(-.2rem)
+      background: $gray
+
+      &::after 
+        transform: rotate(90deg) translateX(-.8rem)
+        background: $gray
+
+      &::before
+        display: none 
+
+  &__item 
+    width: 100%
+    height: 0.3rem
+
+    position: relative
+    background: $black
+
+    &::after 
+      content: ''
+      position: absolute
+
+      bottom: -.8rem
+      left: 0
+      z-index: 1
+
+      width: 100%
+      height: 100%
+      background: $black
+
+    &::before 
+      content: ''
+      position: absolute
+
+      top: -.8rem
+      left: 0
+      z-index: 1
+
+      width: 100%
+      height: 100%
+      background: $black  
+
+
+@media (max-width: 970px)
+  .header__inner 
+    padding: 3.3rem 2rem 4rem 2rem
+
+@media (max-width: 768px)
+  .header__inner 
+    border-bottom: none
+
+  .nav 
+    display: none
+
+  .burger
+    display: flex
