@@ -26,6 +26,7 @@
     height: calc(100vh - 6.4rem)
 
     padding: 0 2.5rem 6rem 2.5rem
+    background: white
 
     .nav__link
       &:not(:last-child)
@@ -33,7 +34,7 @@
 
     .nav__notice 
       display: block
-      transform: rotate(90deg) translateX(-5.2rem)
+      transform: rotate(90deg) translate(-6rem, -4.2rem)
 
       align-self: flex-end 
 
@@ -71,7 +72,7 @@
     height: 2.5rem
 
     .burger__item 
-      transform: rotate(45deg) translateX(-.2rem)
+      transform: rotate(45deg)
       background: $gray
 
       &::after 
@@ -87,6 +88,8 @@
 
     position: relative
     background: $black
+
+    +tr
 
     &::after 
       content: ''
