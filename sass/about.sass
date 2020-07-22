@@ -1,0 +1,30 @@
+.about 
+  background: #F6F6F6
+
+  &__inner 
+    padding: 12rem 0
+
+    .title 
+      margin-bottom: 2.5rem
+
+    .text 
+      width: 100%
+      max-width: 48.5rem
+      
+      margin: 0 auto
+
+      p
+        &:not(:last-child)
+          margin-bottom: 4.5rem
+
+@media (max-width: 970px)
+  .about__inner 
+    padding: 12rem 2rem       
+
+@media (max-width: 540px)
+  .text 
+    max-width: none
+    margin: 0
+
+    br 
+      display: none        
