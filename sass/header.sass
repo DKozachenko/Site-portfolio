@@ -1,4 +1,16 @@
 .header
+  &.header_fixed
+    position: fixed
+    left: 0
+    right: 0
+    top: 0
+    z-index: 2
+
+    background: #c5bcc5
+
+    .header__inner 
+      border-bottom: none
+
   &__inner 
     position: relative
 
@@ -34,9 +46,12 @@
 
     .nav__notice 
       display: block
-      transform: rotate(90deg) translate(-6rem, -4.2rem)
-
+      transform: rotate(90deg) 
       align-self: flex-end 
+
+      position: fixed
+      right: -.5rem
+      bottom: 12rem
 
       span 
         +font('Gilroy Bold', 3.4rem, $gray)
@@ -123,6 +138,9 @@
 @media (max-width: 768px)
   .header__inner 
     border-bottom: none
+
+  .header.header_fixed
+    background: white  
 
   .nav 
     display: none
