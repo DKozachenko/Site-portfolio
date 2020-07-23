@@ -15,18 +15,6 @@
 
       margin-bottom: 3rem
 
-    .button 
-      +font('Gilroy Bold', 1.8rem, white)  
-      border: none
-      border-radius: 2rem
-      background: $black
-
-      padding: 1.5rem 3rem
-
-      box-shadow: .8rem 1rem 2rem rgba($black, .1)
-
-      margin-bottom: 8.5rem
-
     .social 
       &__icons
         display: flex
@@ -37,9 +25,31 @@
           &:not(:last-child)
             margin-right: 6rem 
 
+          &:hover 
+            cursor: pointer
+
       &__text 
         +font('Gilroy Medium', 1.4rem, $gray)   
         text-align: center   
+
+.button 
+  +font('Gilroy Bold', 1.8rem, white)  
+  border: none
+  border-radius: 2rem
+  background: $black
+
+  padding: 1.5rem 3rem
+
+  +tr
+
+  box-shadow: .8rem 1rem 2rem rgba($black, .1)
+
+  margin-bottom: 8.5rem   
+
+  &:hover 
+    color: $black
+
+    background: white     
 
 @media (max-width: 970px)
   .contacts__inner 

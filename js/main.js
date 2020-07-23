@@ -6,7 +6,11 @@ const burger = document.querySelector('.burger'),
   home = document.querySelector('.home'),
   header = document.querySelector('.header'),
   
-  navLinks = document.querySelectorAll('.nav__link');
+  navLinks = document.querySelectorAll('.nav__link'),
+  
+  contactsButton = document.querySelector('.contacts__inner > .button'), 
+  modal = document.querySelector('.modal'),
+  modalWindowClose = modal.querySelector('.modal__window-close');
 
 burger.addEventListener('click', () => {
   nav.classList.toggle('nav_show');
@@ -39,3 +43,32 @@ navLinks.forEach(item => {
     });
   })
 })
+
+contactsButton.addEventListener('click', () => {
+  modal.classList.add('modal_show');
+})
+
+modalWindowClose.addEventListener('click', () => {
+  modal.classList.remove('modal_show');
+  modal.querySelector('textarea').value = '';
+})
+
+window.addEventListener('click', (e) => {
+  const target = e.target;
+
+  if (modal.classList.contains('modal_show') && target !== contactsButton) {
+    if (!target.closest('.modal__window')) {
+      modal.classList.remove('modal_show');
+      modal.querySelector('textarea').value = '';
+    }
+  }
+})
+
+var typed = new Typed('.home__inner-info > .title', {
+  strings: ["Denis Novak", "Novak Denis"],
+  typeSpeed: 100,
+  backSpeed: 70,
+  loop: true
+});
+
+new WOW().init();
